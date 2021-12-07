@@ -50,88 +50,116 @@ function addItemToDOM(text) {
 
   // //ALI
   if (
-    (type == "ali" && TD <= 50) ||
-    (type == "ali" && TD <= 20 && TR == NULL)
+    (type == "ali" && TD <= 50 && TR<=5) ||
+    (type == "ali" && TD >=20 && TD<=50 && TR == 1)
   ) {
     let PF = " ALI => complexidade: Baixa PF = 7";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "ali" && TR >= 6 && TD >= 20) {
+  if ( (type == "ali" && TD >= 51 && TR == 1) || 
+  (type == "ali" && TD >=20 && TD<=50 && TR >=2 && TR<=5) || 
+  (type == "ali" && TD <= 19 && TR >= 6) ) {
     let PF = "ALI => complexidade: Média PF = 10";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "ali" && TR >= 2 && TD >= 51) {
+  if((type == "ali" && TD >=20 && TD<=50 && TR >=6) || 
+  (type == "ali" && TD >=51  && TR >=2 && TR<=5) || 
+  (type == "ali" && TD >=51 && TR >=6))
+   {
     let PF = "ALI => complexidade: Alta PF = 15";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
   //AIE
   if (
-    (type == "aie" && TD <= 50) ||
-    (type == "aie" && TD <= 20 && TR == undefined)
+    (type == "aie" && TD <= 50 && TR<=5) ||
+    (type == "aie" && TD >=20 && TD<=50 && TR == 1)
   ) {
     let PF = "AIE => complexidade: Baixa PF = 5";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "aie" && TR >= 6 && TD >= 20) {
+  if ((type == "aie" && TD >= 51 && TR == 1) || 
+  (type == "aie" && TD >=20 && TD<=50 && TR >=2 && TR<=5) || 
+  (type == "aie" && TD <= 19 && TR >= 6)) {
     let PF = "AIE => complexidade: Média PF = 7";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "aie" && TR >= 2 && TD >= 51) {
+  if (((type == "aie" && TD >=20 && TD<=50 && TR >=6) || 
+  (type == "aie" && TD >=51  && TR >=2 && TR<=5) || 
+  (type == "aie" && TD >=51 && TR >=6))) {
     let PF = "AIE => complexidade: Alta PF = 10";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
   //SE
   if (
-    (type == "se" && TR <= 3 && TD <= 5) ||
-    (type == "se" && TD >= 0 && TR <= 3)
+    (type == "se" && TD <= 19 && TD <= 1) ||
+    (type == "se" && TD >= 1 && TD<=5 && TR>=2 && TR <= 3)
   ) {
     let PF = "SE => complexidade: Baixa PF = 4";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "se" && TR <= 3 && TD <= 19) {
+  if (
+    (type == "se" && TD >= 20 && TD <= 1) ||
+    (type == "se" && TD >= 6 && TD<=19 && TR>=2 && TR <= 3) ||
+    (type == "se" && TD >= 1 && TD<=5 && TR>=4)
+  ) {
     let PF = "SE => complexidade: Média PF = 5";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "se" && TR >= 2 && TD >= 20) {
+  if ((type == "se" && TD >= 20 && TR >=2 && TR<=3) || 
+  (type == "se" && TD >= 6 && TD<=19 && TR>=4) ||
+  (type == "se" && TD >= 20 && TR>=4)
+  ) {
     let PF = "SE => complexidade: Alta PF = 7";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
   //   CE
-  if (type == "ce" && TR <= 3 && TD <= 19) {
+  if (
+    (type == "ce" && TD <= 19 && TD <= 1) ||
+    (type == "ce" && TD >= 1 && TD<=5 && TR>=2 && TR <= 3)
+  ) {
     let PF = "CE => complexidade: Média PF = 4";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   } else if (
-    (type == "ce" && TR <= 3 && TD <= 5) ||
-    (type == "ce" && TD >= 0 && TR <= 3)
+    (type == "ce" && TD >= 20 && TD <= 1) ||
+    (type == "ce" && TD >= 6 && TD<=19 && TR>=2 && TR <= 3) ||
+    (type == "ce" && TD >= 1 && TD<=5 && TR>=4)
   ) {
     let PF = "CE => complexidade: Baixa PF = 3";
     item.innerText = `Função: ${text} resultado: ${PF}`;
-  } else if (type == "ce" && TR >= 2 && TD >= 20) {
+  }else if ((type == "ce" && TD >= 20 && TR >=2 && TR<=3) || 
+  (type == "ce" && TD >= 6 && TD<=19 && TR>=4) ||
+  (type == "ce" && TD >= 20 && TR>=4)
+  ) {
     let PF = "CE => complexidade: Alta PF = 6";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
   //EE
-  if (type == "ee" && TR <= 2 && TD <= 4) {
+  if ((type == "ee" && TD <= 15 && TR<=1) || 
+  (type == "ee" && TD <= 4 && TR ==2)){
     let PF = "EE => complexidade: Baixa PF = 3";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "ee" && TR >= 3 && TD <= 4) {
+  if ((type == "ee" && TD >= 16 && TD <= 1) ||
+  (type == "ee" && TD>=5 && TD <= 15 && TR == 2)||
+  (type == "ee" && TD <= 4 && TR>=3)) {
     let PF = "EE => complexidade: Média PF = 4";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if (type == "ee" && TR >= 2 && TD >= 16) {
+  if ((type == "ee" && TR == 2 && TD >= 16) ||
+  (type == "ee" &&  TD>=5 && TD <= 15 && TR>=3) || 
+  (type == "ee" && TD >= 16 && TR>=3)) {
     let PF = "EE => complexidade: Alta PF = 6";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
