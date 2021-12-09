@@ -97,7 +97,8 @@ function addItemToDOM(text) {
 
   //SE
   if (
-    (type == "se" && TD <= 19 && TD <= 1) ||
+    (type == "se" && TD >= 6 && TD <= 19 && TR<=1) ||
+    (type == "se" && TD >= 1 && TD <= 5 && TR<=1) ||
     (type == "se" && TD >= 1 && TD<=5 && TR>=2 && TR <= 3)
   ) {
     let PF = "SE => complexidade: Baixa PF = 4";
@@ -105,9 +106,11 @@ function addItemToDOM(text) {
   }
 
   if (
+    (type == "se" && TD== 0 && TR== 0) ||
     (type == "se" && TD >= 20 && TD <= 1) ||
     (type == "se" && TD >= 6 && TD<=19 && TR>=2 && TR <= 3) ||
     (type == "se" && TD >= 1 && TD<=5 && TR>=4)
+    
   ) {
     let PF = "SE => complexidade: Média PF = 5";
     item.innerText = `Função: ${text} resultado: ${PF}`;
@@ -131,7 +134,7 @@ function addItemToDOM(text) {
   } else if (
     (type == "ce" && TD >= 20 && TD <= 1) ||
     (type == "ce" && TD >= 6 && TD<=19 && TR>=2 && TR <= 3) ||
-    (type == "ce" && TD >= 1 && TD<=5 && TR>=4)
+    (type == "ce" && TD >= 1 && TD<=5 && TR>=4) 
   ) {
     let PF = "CE => complexidade: Baixa PF = 3";
     item.innerText = `Função: ${text} resultado: ${PF}`;
@@ -144,20 +147,24 @@ function addItemToDOM(text) {
   }
 
   //EE
-  if ((type == "ee" && TD <= 15 && TR<=1) || 
+  if ((type == "ee" && TD >= 5 && TR<=15) || 
+  (type == "ee" && TD >=1 && TR<=4) ||
   (type == "ee" && TD <= 4 && TR ==2)){
     let PF = "EE => complexidade: Baixa PF = 3";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if ((type == "ee" && TD >= 16 && TD <= 1) ||
+  if (
+  (type == "ee" && TD >= 16 && TD <= 1) ||
   (type == "ee" && TD>=5 && TD <= 15 && TR == 2)||
-  (type == "ee" && TD <= 4 && TR>=3)) {
+  (type == "ee" && TD <= 4 && TR>=3) || (type == "ee" && TD== 0 && TR== 0)
+  ) {
     let PF = "EE => complexidade: Média PF = 4";
     item.innerText = `Função: ${text} resultado: ${PF}`;
   }
 
-  if ((type == "ee" && TR == 2 && TD >= 16) ||
+  if (
+  (type == "ee" && TR == 2 && TD >= 16) ||
   (type == "ee" &&  TD>=5 && TD <= 15 && TR>=3) || 
   (type == "ee" && TD >= 16 && TR>=3)) {
     let PF = "EE => complexidade: Alta PF = 6";
